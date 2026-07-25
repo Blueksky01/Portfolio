@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idol Card Order Tracker — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🟢 Personal Project — Active Development</p>
+  <h1 class="pd-hero-title">Idol Card Order Tracker</h1>
+  <p class="pd-hero-tagline">ระบบติดตามออเดอร์การ์ดไอดอล/ของสะสม ให้ลูกค้าเช็คสถานะและยอดคงเหลือด้วยชื่อบัญชีโซเชียลแบบเรียลไทม์ โดยไม่ต้องสมัครสมาชิก</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Supabase</span><span>Bootstrap 5</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Not Deployed</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">เครื่องมือสำหรับพ่อค้าแม่ค้าที่ขายการ์ด/ของสะสมและรับออเดอร์จาก IG/Twitter — ลูกค้าพิมพ์ชื่อบัญชีโซเชียลค้นหาสถานะออเดอร์และยอดเงินคงเหลือได้เองแบบเรียลไทม์ ไม่ต้องสมัครสมาชิก ส่วนแอดมินจัดการออเดอร์ ยอดมัดจำ และนำเข้าออเดอร์เป็นชุดผ่าน dashboard</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🚫</span><p>ระบบนี้ <strong>ไม่ใช่</strong> ตะกร้าสินค้า/เช็คเอาต์ออนไลน์ ไม่ใช่ payment gateway และไม่ใช่ระบบบัญชีเต็มรูปแบบ — ลูกค้าไม่ได้สั่งซื้อผ่านระบบ แค่เช็คสถานะ</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">💬</span><p>ปัญหาเดิม: รับออเดอร์ผ่านแชท/คอมเมนต์ ลูกค้าถามซ้ำว่า "ของถึงไหนแล้ว มัดจำครบยัง" แอดมินต้องไล่เปิดแชทหาทีละคน</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔍</span><h3>Order Search</h3><p>ลูกค้าค้นหาออเดอร์ของตัวเองด้วยชื่อบัญชี IG/Twitter โดยไม่ต้องสมัครสมาชิก</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📡</span><h3>Realtime Update</h3><p>Supabase Realtime subscribe การเปลี่ยนแปลง เมื่อแอดมินอัปเดตออเดอร์ หน้าลูกค้าเด้งข้อมูลใหม่ทันทีโดยไม่ต้อง refresh</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🗂️</span><h3>Admin Dashboard</h3><p>สรุปสถิติออเดอร์ และจัดการรายการออเดอร์ทั้งหมด</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📥</span><h3>Batch Import/Export</h3><p>นำเข้า/ส่งออกออเดอร์เป็นไฟล์ Excel ด้วย xlsx</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">💰</span><h3>Payment Ledger</h3><p>ติดตามยอดมัดจำและยอดคงเหลือ แยกเก็บรายการปรับยอดเป็น ledger ไม่แก้ยอดรวมตรง ๆ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔐</span><h3>Admin Authorization</h3><p>ทุก Server Action เช็คสิทธิ์ผ่าน requireAdmin() ก่อนแตะข้อมูลทุกครั้ง สิทธิ์อ่านจาก ADMIN_EMAILS ใน env</p></div>
+    </div>
+  </section>
+
+  <!-- 4. ORDER LIFECYCLE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Order Lifecycle</p>
+    <h2 class="pd-heading">สถานะของออเดอร์</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>RESERVED</h3><p>รับออเดอร์เข้าระบบ</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>ORDERED</h3><p>สั่งของแล้ว</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>READY_TO_SHIP</h3><p>พร้อมจัดส่ง</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>COMPLETED</h3><p>ส่งมอบเรียบร้อย (หรือ CANCELLED หากยกเลิก)</p></div></li>
+    </ol>
+    <p class="pd-note">payment_status แยกอิสระจากสถานะออเดอร์: <code>PENDING → DEPOSIT → PAID</code></p>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Client (ลูกค้า)</span><p>ค้นหาออเดอร์ผ่าน<br>/api/orders/search</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>API Route</span><p>ควบคุม query<br>ป้องกันอ่านตารางตรง</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Supabase</span><p>Postgres + RLS<br>Realtime channel</p></div>
+    </div>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Admin</span><p>Server Actions<br>(actions.ts / batch-actions.ts)</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>requireAdmin()</span><p>ตรวจสิทธิ์ก่อน<br>แตะข้อมูลทุกครั้ง</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Supabase</span><p>เขียน/แก้ไขออเดอร์</p></div>
+    </div>
+    <p class="pd-note">ฝั่งลูกค้าอ่านตาราง <code>orders</code> ตรง ๆ ผ่าน anon key ไม่ได้ (RLS policy ตั้ง <code>USING (false)</code>) ต้องผ่าน API route เท่านั้น — ส่วน business logic เช่นการคำนวณยอดคงเหลือ (<code>price_balance</code> generated column) และ ledger การจ่ายเงิน อยู่ที่ Postgres ไม่ใช่ฝั่ง frontend</p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Bootstrap 5</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Server Actions</span><span>jose (JWT)</span><span>xlsx</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>Supabase (Postgres)</span><span>Row Level Security</span><span>Realtime</span></div></div>
+      <div class="pd-stack-group"><h3>Deployment</h3><div class="pd-badges"><span>Vercel</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบ Schema</h3><p>ตาราง orders, profiles, RLS ใน supabase_schema.sql</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้าง Public Search API</h3><p>route ที่ควบคุม query แทนการอ่านตารางตรงจากฝั่งลูกค้า</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>วาง Admin Authorization</h3><p>requireAdmin() ตรวจสิทธิ์จาก ADMIN_EMAILS ก่อนทุก Server Action</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เพิ่ม Payment Ledger</h3><p>แยก migration สำหรับคำนวณยอดคงเหลือและบันทึกรายการปรับยอด</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เปิด Realtime + Batch Import</h3><p>เปิด postgres_changes channel และเพิ่มนำเข้า/ส่งออกออเดอร์เป็น Excel</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">ลูกค้าถามซ้ำ ๆ ว่าของถึงไหนแล้ว มัดจำครบยัง แอดมินต้องไล่เปิดแชทหาทีละคน</p><p class="pd-cs-after">ลูกค้าค้นหาสถานะเองผ่านชื่อบัญชีโซเชียล เห็นสถานะ+ยอดค้างชำระทันทีโดยไม่ต้องถาม</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">อัปเดตออเดอร์แล้วลูกค้ายังเห็นข้อมูลเก่า ต้อง refresh เอง</p><p class="pd-cs-after">Supabase Realtime subscribe การเปลี่ยนแปลง หน้าลูกค้าเด้งข้อมูลใหม่ทันที</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ลูกค้าอาจอ่านออเดอร์ของคนอื่นได้ผ่าน anon key</p><p class="pd-cs-after">ตั้ง RLS policy เป็น USING (false) บังคับให้ทุกการค้นหาผ่าน API route ที่ควบคุม query เท่านั้น</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">แก้ price_total ตรง ๆ ทำให้ตรวจสอบยอดปรับย้อนหลังไม่ได้</p><p class="pd-cs-after">แยกรายการปรับยอดเป็น payment ledger ต่างหาก ไม่แก้ price_total ตรง ๆ</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>ยังไม่มีไฟล์ <code>.env.example</code> ในโปรเจกต์ — ต้องเพิ่มเพื่อให้ตั้งค่า environment variables ได้ง่ายขึ้น</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>ยังไม่กำหนด</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>Personal Project</p></div>
+      <div class="pd-repo-card"><span>Deployment</span><p>Next.js มาตรฐาน — deploy บน Vercel ได้ตรง ต้องตั้ง environment variables และรัน schema/migrations บน Supabase project จริงก่อน</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

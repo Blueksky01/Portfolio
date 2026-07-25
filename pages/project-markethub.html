@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarketHub — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🔒 Private Project — Active Development</p>
+  <h1 class="pd-hero-title">MarketHub</h1>
+  <p class="pd-hero-tagline">ระบบจอง-เช่าล็อคตลาดออนไลน์ ตั้งแต่เลือกล็อค จอง ชำระเงิน จนถึงต่อสัญญา ผูก state ล็อคเข้ากับ booking และ payment โดยตรง</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>MongoDB</span><span>Mongoose</span><span>TypeScript</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Private Project</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">MarketHub ให้ผู้ค้าเลือกล็อค จอง ชำระเงิน และดูสัญญาเช่าได้เอง ส่วนแอดมินจัดการโซน ล็อค การอนุมัติจอง การจ่ายเงิน และการคืนเงินผ่านหน้า Dashboard เดียว ปัญหาเดิมคือการจองล็อคตลาดทำด้วยกระดาษ/แชท ตรวจสอบล็อคว่างยาก อนุมัติช้า และไม่มีประวัติย้อนกลับได้ — ระบบนี้ผูก state ของล็อค (ว่าง/จอง/เช่าอยู่) เข้ากับ booking และ payment โดยตรง พร้อม audit log ทุกการเปลี่ยนแปลง</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🏪</span><p>ระบบนี้คือระบบจัดการการเช่าพื้นที่ล็อคในตลาด ตั้งแต่การจอง → อนุมัติ → ชำระเงิน → แจ้งเตือนต่อสัญญา ไม่ใช่ระบบ POS หรือ marketplace ขายสินค้า</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">📜</span><p>ผู้ค้าจองล็อคได้เองแบบ real-time เห็นสถานะล็อคตรงกับความจริงเสมอ แอดมินลดงานเอกสารและมีหลักฐานย้อนหลังทุกธุรกรรม</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🗓️</span><h3>Calendar Picker</h3><p>ดูล็อค/โซนตลาดพร้อมปฏิทินความว่าง ค้นหาและบุ๊กมาร์กล็อคที่สนใจ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📆</span><h3>Booking + Queue</h3><p>จองล็อคแบบรายวัน/รายสัปดาห์/รายเดือน พร้อมระบบคิวกรณีล็อคไม่ว่าง</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🧾</span><h3>OCR Slip Verification</h3><p>อัปโหลดสลิปโอนเงิน ตรวจสอบด้วย OCR (Tesseract.js) ก่อนส่งให้แอดมินอนุมัติ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔔</span><h3>Notifications</h3><p>แจ้งเตือนอัตโนมัติ (ต่อสัญญา, สถานะจอง) ผ่าน in-app notification และอีเมล (Resend)</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🛠️</span><h3>Admin Dashboard</h3><p>จัดการโซน/ล็อค อนุมัติ/ปฏิเสธการจอง ตรวจสอบการชำระเงิน คืนเงิน จัดการพนักงาน export เป็น Excel</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">⏱️</span><h3>Cron Automation</h3><p>ตรวจสัญญาใกล้หมดอายุและปลดล็อคอัตโนมัติผ่าน scheduled job</p></div>
+    </div>
+  </section>
+
+  <!-- 4. SYSTEM WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">System Workflow</p>
+    <h2 class="pd-heading">เส้นทางของการจองล็อค 1 ครั้ง</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>เลือกล็อค</h3><p>ผู้ค้าเลือกล็อคจากปฏิทินความว่าง</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>จอง (PENDING)</h3><p>ถ้าล็อคไม่ว่าง เข้าคิวและรับแจ้งเตือนเมื่อว่าง</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>อัปโหลดสลิป + OCR</h3><p>ตรวจสอบสลิปโอนเงินด้วย Tesseract.js</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>แอดมินตรวจสอบ/อนุมัติ</h3><p>ยืนยันการชำระเงิน สถานะเปลี่ยนเป็น APPROVED</p></div></li>
+      <li><span class="pd-tl-dot">5</span><div><h3>เช่าอยู่ (ACTIVE)</h3><p>สัญญาเริ่มมีผล ล็อคเปลี่ยนสถานะเป็นเช่าอยู่</p></div></li>
+      <li><span class="pd-tl-dot">6</span><div><h3>ต่อสัญญา / สิ้นสุด</h3><p>ใกล้หมดสัญญาได้รับแจ้งเตือน เลือกต่อสัญญาหรือสิ้นสุด</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Client</span><p>React 19<br>Next.js 16 App Router</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>API Routes</span><p>src/app/api<br>route groups: (auth) (user) (admin)</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Service / Validation</span><p>src/lib<br>auth · db · notification · email · ocr</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Database</span><p>Mongoose Models<br>MongoDB</p></div>
+    </div>
+    <p class="pd-note">กฎเดียว: สถานะล็อคเปลี่ยนได้ผ่าน <code>booking/payment flow</code> เท่านั้น ห้ามแก้ state ล็อคตรงในฐานข้อมูล — ทุกการเปลี่ยนสถานะสำคัญถูกบันทึกใน <code>AuditLog</code></p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>React Bootstrap</span><span>Sass</span><span>Framer Motion</span><span>SweetAlert2</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Next.js API Routes</span><span>NextAuth.js v5</span><span>React Hook Form</span><span>Zod</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>MongoDB</span><span>Mongoose</span></div></div>
+      <div class="pd-stack-group"><h3>Files / Comms</h3><div class="pd-badges"><span>Cloudinary</span><span>Tesseract.js</span><span>Resend</span><span>xlsx</span></div></div>
+      <div class="pd-stack-group"><h3>Testing / Infra</h3><div class="pd-badges"><span>Vitest</span><span>Testing Library</span><span>Docker</span><span>Vercel</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบ Data Model</h3><p>User, Zone, Lock, Booking, Payment, Refund, Queue, InterestList, Notification, AuditLog</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>วาง Route Groups ตามสิทธิ์</h3><p>(auth) หน้า login/register, (user) หน้าผู้เช่า, (admin) หน้าแอดมิน</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>ผูก Booking กับ Lock State</h3><p>state ล็อคเปลี่ยนได้ผ่าน booking/payment flow เท่านั้น</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เพิ่ม OCR + Notification</h3><p>ตรวจสลิปด้วย Tesseract.js แจ้งเตือนผ่าน in-app และ Resend</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เชื่อม Cron + Deploy</h3><p>scheduled job ตรวจสัญญาใกล้หมดอายุ, deploy บน Vercel / Docker</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">จองล็อคด้วยกระดาษ/แชท ตรวจสอบล็อคว่างยาก</p><p class="pd-cs-after">ผูก state ล็อคเข้ากับ booking โดยตรง เห็นสถานะตรงกับความจริงเสมอ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">อนุมัติช้า ต้องตรวจสลิปด้วยตาเอง</p><p class="pd-cs-after">ตรวจสอบสลิปด้วย OCR (Tesseract.js) ก่อนส่งให้แอดมินอนุมัติ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ไม่มีประวัติตรวจสอบย้อนกลับได้</p><p class="pd-cs-after">ทุกการเปลี่ยนสถานะสำคัญ (อนุมัติ, คืนเงิน, ปลดล็อค) บันทึกใน AuditLog</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ล็อคไม่ว่างแต่ผู้ค้ายังอยากจอง</p><p class="pd-cs-after">ระบบ Queue และ Interest List ให้เข้าคิวและรับแจ้งเตือนเมื่อล็อคว่าง</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>ขยาย automated test coverage เพิ่มเติมจากชุดทดสอบ Vitest + Testing Library ปัจจุบัน</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>Private project — ไม่เปิด public license</p></div>
+      <div class="pd-repo-card"><span>Database</span><p>MongoDB (local ผ่าน Docker, production ผ่าน MongoDB Atlas)</p></div>
+      <div class="pd-repo-card"><span>Deployment</span><p>Vercel หรือ Docker Compose</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

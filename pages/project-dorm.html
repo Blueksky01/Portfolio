@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dorm Management — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🟢 Personal Project — Active Development</p>
+  <h1 class="pd-hero-title">Dorm Management</h1>
+  <p class="pd-hero-tagline">ระบบจัดการหอพักแบบครบวงจร ผู้เช่าจองห้อง อัปโหลดสลิปโอนเงิน ระบบอ่านสลิปด้วย OCR ช่วยตรวจสอบเบื้องต้น ก่อน admin อนุมัติผ่าน dashboard</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>MongoDB</span><span>Mongoose</span><span>TypeScript</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Deployable on Vercel</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">เว็บแอปบริหารหอพักสำหรับ <strong>Admin</strong> จัดการห้อง/บิล/ผู้เช่า และ <strong>Tenant</strong> เลือกห้อง ชำระเงิน อัปโหลดสลิปโอนเงิน — ระบบใช้ Tesseract OCR อ่านสลิปช่วยตรวจสอบเบื้องต้น ก่อนให้ admin ตรวจสอบ/อนุมัติ/ปฏิเสธจริงผ่าน dashboard</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🚫</span><p>ระบบนี้ไม่ใช่ payment gateway ไม่ตัดเงินจริง เป็นการตรวจสลิปโอนเงินด้วยมือ + OCR ช่วย ไม่ใช่ระบบบัญชี/ภาษีเต็มรูปแบบ</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🔒</span><p>ทุกสถานะห้อง/บิลเดินตามกฎธุรกิจที่ชัดเจน ป้องกันห้อง "ค้าง" สถานะผิดหรือถูกจองซ้ำ</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🏠</span><h3>Room Booking</h3><p>ผู้เช่าเลือกห้องจากรายการห้องว่าง ระบบกันจองซ้ำอัตโนมัติ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🧾</span><h3>Slip Upload + OCR</h3><p>อัปโหลดสลิปโอนเงิน อ่านข้อมูลด้วย Tesseract.js ช่วยตรวจสอบเบื้องต้น</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">✅</span><h3>Admin Approval</h3><p>Admin ตรวจสลิปและอนุมัติ/ปฏิเสธบิลผ่าน dashboard</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📊</span><h3>Dashboard Charts</h3><p>สรุปข้อมูลหอพักด้วยกราฟผ่าน Chart.js</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔐</span><h3>JWT Authentication</h3><p>Access/refresh token แยก role Admin และ Tenant ชัดเจน</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">☁️</span><h3>Cloudinary Storage</h3><p>เก็บรูปห้อง สลิป และเอกสารบนคลาวด์</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">👤</span><h3>Tenant Profile</h3><p>ผู้เช่าดูโปรไฟล์และบิลของตัวเองได้ทุกเมื่อ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🧩</span><h3>Room Status State Machine</h3><p>ห้องเดินตามสถานะ vacant → pending → occupied อย่างมีกฎเข้มงวด</p></div>
+    </div>
+  </section>
+
+  <!-- 4. SYSTEM WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">System Workflow</p>
+    <h2 class="pd-heading">เส้นทางการจองห้องหนึ่งครั้ง</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>เลือกห้อง + ส่งสลิป</h3><p>Tenant เลือกห้องว่างและอัปโหลดสลิปโอนเงิน</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>ห้องเปลี่ยนเป็น Pending</h3><p>Room: vacant → pending ห้องหายจากรายการห้องว่างทันที กันจองซ้ำ / Bill: pending</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>Admin ตรวจสลิป</h3><p>ตรวจสอบสลิปที่ OCR ช่วยอ่านแล้ว</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>อนุมัติ</h3><p>Bill → verified, Room → occupied</p></div></li>
+      <li><span class="pd-tl-dot">5</span><div><h3>ปฏิเสธ (ทางเลือก)</h3><p>Bill → rejected, Room → pending → vacant พร้อมลบ tenant ออกจากห้อง</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Frontend</span><p>Next.js 16 App Router<br>React 19 + Bootstrap</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>API</span><p>Route Handlers<br>(Controller + Service รวมกัน)</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Data Layer</span><p>Mongoose Schemas<br>Admin · Room · Bill · Slip · userTenant</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Database</span><p>MongoDB</p></div>
+    </div>
+    <p class="pd-note">Business logic ส่วนใหญ่อยู่ใน route handler แต่ละ endpoint ภายใต้ <code>src/app/api/</code> ตรวจ auth/token ผ่าน <code>src/libs</code> และ <code>src/utils</code></p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Bootstrap</span><span>Chart.js</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Route Handlers</span><span>Mongoose</span><span>JWT (jsonwebtoken)</span><span>bcrypt / bcryptjs</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>MongoDB</span></div></div>
+      <div class="pd-stack-group"><h3>DevOps / Infra</h3><div class="pd-badges"><span>Cloudinary</span><span>Tesseract.js OCR</span><span>Vercel</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบ Data Model</h3><p>Admin, Room, Bill, Slip, userTenant ด้วย Mongoose Schemas</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้าง Auth Layer</h3><p>JWT access/refresh token แยก login Admin กับ Tenant</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>ทำ Room Booking Flow</h3><p>เลือกห้อง อัปโหลดสลิป เชื่อม Cloudinary + OCR</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>แก้บั๊กสถานะห้องค้าง</h3><p>เพิ่มสถานะ pending คั่นระหว่าง vacant กับ occupied กันจองซ้ำ</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เพิ่ม Admin Dashboard</h3><p>อนุมัติ/ปฏิเสธบิล พร้อมกราฟสรุปด้วย Chart.js</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">ผู้เช่าเลือกห้องแล้วกด "ชำระเงิน" แต่ยังไม่จ่ายจริง ระบบล็อกห้องเป็น "เช่าแล้ว" ทันที ทำให้คนอื่นจองห้องเดิมไม่ได้ทั้งที่ยังไม่มีใครจ่ายเงินจริง</p><p class="pd-cs-after">เพิ่มสถานะห้อง pending คั่นระหว่าง vacant กับ occupied ห้องจะ "เช่าแล้ว" จริงก็ต่อเมื่อ admin ตรวจสลิปแล้วอนุมัติเท่านั้น</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">บิลถูกปฏิเสธแล้วห้องยังค้างสถานะเดิม ไม่มีใครจองซ้ำได้</p><p class="pd-cs-after">บิลที่ rejected ต้องคืนห้องเป็น vacant และลบ tenant ออกจากห้องเสมอ เป็นกฎธุรกิจบังคับ</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>ยังไม่มี automated test suite</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>ยังไม่กำหนด — โปรเจกต์ส่วนตัว</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>Personal Project</p></div>
+      <div class="pd-repo-card"><span>Deployment</span><p>Vercel (Next.js standard deployment)</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

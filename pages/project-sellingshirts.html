@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selling Shirts — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🟢 Coursework Project — Full-Stack Build</p>
+  <h1 class="pd-hero-title">Selling Shirts</h1>
+  <p class="pd-hero-tagline">ระบบขายเสื้อออนไลน์แบบ full-stack ลูกค้าสั่งซื้อและอัปโหลดสลิปเอง แอดมินตรวจสอบและอนุมัติออเดอร์ผ่าน dashboard</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>Express 5</span><span>MongoDB</span><span>TypeScript</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Not Deployed Publicly</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">โปรเจกต์งานวิชาที่อาจารย์ให้ดูเว็บขายเสื้อของอาจารย์เป็น<strong>ตัวอย่างแนวคิด</strong> (ไม่ใช่ clone โค้ด) แล้วให้นักศึกษาออกแบบและ<strong>สร้างขึ้นเองทั้งหมด</strong> เพื่อให้อาจารย์ประเมินคะแนนด้าน design และ UI/UX ระบบจำลองร้านขายเสื้อขนาดเล็ก-กลาง ที่ต้องจัดการสต๊อกตามไซซ์/สี ยืนยันการชำระเงินด้วยสลิปแบบ manual (ไม่ผูก payment gateway) และมีสิทธิ์ผู้ใช้สองระดับคือลูกค้ากับแอดมิน</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🎯</span><p>แก้ปัญหาร้านเสื้อขนาดเล็กที่รับออเดอร์ผ่านแชท/โพสต์ ตามสต๊อกและสถานะจ่ายเงินด้วยมือ สับสนและตกหล่นง่าย</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🧾</span><p>ระบบเก็บ state ของออเดอร์ตั้งแต่รอชำระจนถึงจัดส่งเสร็จ ให้แอดมินกดอนุมัติทีละสถานะแทนการนับสต๊อกด้วยมือ</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🛍️</span><h3>Product & Stock</h3><p>จัดการสินค้าแยกตามไซซ์/สี พร้อมรูปสินค้าเก็บผ่าน Cloudinary</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🧾</span><h3>Order + Slip Upload</h3><p>ลูกค้าสั่งซื้อและอัปโหลดสลิปโอนเงินเอง ไม่ต้องผูก payment gateway</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">✅</span><h3>Admin Approval</h3><p>แอดมินตรวจสลิปแล้วอนุมัติออเดอร์ทีละสถานะผ่าน dashboard</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔐</span><h3>JWT + Google OAuth</h3><p>ลูกค้าล็อกอินด้วยเบอร์โทรหรือ Google ก็ได้ auth ด้วย access + refresh token</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🧑‍💼</span><h3>Two-Tier Admin</h3><p>แยก super admin กับ staff admin ล็อกอินคนละทางผ่าน <code>/admin_login</code></p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📊</span><h3>Admin Dashboard</h3><p>ภาพรวมออเดอร์ สินค้า และผู้ใช้ทั้งหมดในหน้าเดียว</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📜</span><h3>Order History</h3><p>ลูกค้าดูประวัติออเดอร์และสถานะย้อนหลังได้ทุกเมื่อ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🖼️</span><h3>Cloudinary Storage</h3><p>รูปสินค้าและสลิปโอนเงินเก็บเป็น URL บน Cloudinary ไม่เก็บไฟล์บนเซิร์ฟเวอร์</p></div>
+    </div>
+  </section>
+
+  <!-- 4. SYSTEM WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">System Workflow</p>
+    <h2 class="pd-heading">วงจรชีวิตของออเดอร์</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>Pending Payment</h3><p>ลูกค้าสร้างออเดอร์ สถานะเริ่มต้นรอชำระเงิน</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>Verifying Payment</h3><p>ลูกค้าอัปโหลดสลิปโอนเงินผ่านหน้า Orders</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>Paid</h3><p>แอดมินตรวจสลิปแล้วอนุมัติ บันทึก approvedBy และ paidAt</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>Shipping</h3><p>แอดมินอัปเดตสถานะเป็นกำลังจัดส่ง</p></div></li>
+      <li><span class="pd-tl-dot">5</span><div><h3>Completed</h3><p>ปิดวงจรออเดอร์เมื่อจัดส่งสำเร็จ</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Frontend</span><p>Next.js 16 App Router<br>React 19 + TanStack Query</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Backend</span><p>Express 5<br>Router → Controller → Model</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Database</span><p>MongoDB<br>Mongoose ODM</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>External</span><p>Cloudinary<br>Google OAuth</p></div>
+    </div>
+    <p class="pd-note">Backend ต่อชั้นแบบ <strong>Router → Controller → Model (Mongoose)</strong> ไม่มีชั้น Service แยกยกเว้น JWT (<code>services/jwtAdminService.ts</code>) ฝั่ง frontend หน้า <code>/admin/*</code> ป้องกันด้วย <code>withAdminAuth</code> HOC และ middleware ที่เช็ค JWT cookie</p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>TanStack Query</span><span>Tailwind CSS</span><span>daisyUI</span><span>react-hook-form</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Node.js</span><span>Express 5</span><span>TypeScript</span><span>JWT (access + refresh)</span><span>Google OAuth</span><span>Multer</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>MongoDB</span><span>Mongoose</span></div></div>
+      <div class="pd-stack-group"><h3>DevOps / Infra</h3><div class="pd-badges"><span>Cloudinary</span><span>Vercel</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบ Schema</h3><p>User, AdminUser, Product, Order ด้วย Mongoose</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้าง Auth Layer</h3><p>JWT access + refresh token พร้อม Google OAuth login</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>วาง Order Lifecycle</h3><p>บังคับเปลี่ยนสถานะออเดอร์ทางเดียวผ่าน endpoint ของแอดมินเท่านั้น</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เชื่อม Cloudinary</h3><p>อัปโหลดรูปสินค้าและสลิปโอนเงินผ่าน Multer + Cloudinary</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้าง Admin Dashboard</h3><p>หน้าแอดมินจัดการสินค้า ผู้ใช้ และออเดอร์ ป้องกันด้วย withAdminAuth</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">ร้านเสื้อขนาดเล็กรับออเดอร์ผ่านแชท/โพสต์ ตามสต๊อกและสถานะจ่ายเงินด้วยมือ สับสนและตกหล่นง่าย</p><p class="pd-cs-after">ให้ลูกค้าสั่งซื้อและอัปโหลดสลิปเองผ่านเว็บ ระบบเก็บ state ของออเดอร์ให้อัตโนมัติ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ไม่มี payment gateway ต้องยืนยันการชำระเงินด้วยสลิปแบบ manual</p><p class="pd-cs-after">ลูกค้าอัปโหลดสลิปเข้า Cloudinary แอดมินตรวจแล้วกดอนุมัติทีละสถานะ พร้อมบันทึก approvedBy และ paidAt</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">เสี่ยงมีคนแก้สถานะออเดอร์ข้ามขั้นตอนตรง ๆ ใน DB</p><p class="pd-cs-after">บังคับเปลี่ยนสถานะได้ทางเดียวผ่าน endpoint ของแอดมินเท่านั้น ห้ามแก้ field status ตรง ๆ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ราคาสินค้าคำนวณผิดถ้าคิดที่ frontend</p><p class="pd-cs-after">ย้าย totalProductPrice + shippingCost = totalPrice ไปคำนวณที่ backend เท่านั้น</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>เพิ่ม automated test suite (ปัจจุบันมีเพียง Postman collection สำหรับยิง API แบบ manual)</li>
+      <li>รองรับ shippingMethod เพิ่มเติมนอกเหนือจาก <code>"post"</code> ซึ่งเป็น enum เดียวในตอนนี้</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>ยังไม่กำหนด — โปรเจกต์รายวิชา</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>University Coursework Project</p></div>
+      <div class="pd-repo-card"><span>Deployment</span><p>Backend + Frontend deploy บน Vercel</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

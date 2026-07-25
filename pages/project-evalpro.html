@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EvalPro — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🟢 Personal Project — Active Development</p>
+  <h1 class="pd-hero-title">EvalPro</h1>
+  <p class="pd-hero-tagline">ระบบประเมินผลองค์กรแบบไม่ระบุตัวตน (myetp) เน้นความโปร่งใส การรักษาความลับ และความแม่นยำทางสถิติ รองรับทั้งองค์กรปิดและแคมเปญสาธารณะ</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>MongoDB</span><span>NextAuth.js</span><span>Gemini AI</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Not Available</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">EvalPro เป็นระบบประเมินผลแบบ<strong>ไม่ระบุตัวตน (Anonymous)</strong> ที่ออกแบบมาเพื่อความโปร่งใส ความลับ และความแม่นยำทางสถิติ รองรับทั้งการประเมินภายในองค์กร (Closed System) ที่ระบุรายชื่อผู้มีสิทธิ์ และการประเมินสาธารณะ (Public Campaign) ผ่าน QR Code</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🔒</span><p>ข้อมูลผู้ประเมินเข้ารหัสด้วย One-way Cryptography (SHA-256) ไม่มีการเก็บความสัมพันธ์ระหว่างบุคคลและคะแนนในฐานข้อมูล</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🛡️</span><p>Anonymity Shield ป้องกันการเดาตัวบุคคลจากรายงานผลด้วยกฎหลายชั้นทำงานร่วมกัน</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🕵️</span><h3>End-to-End Anonymity</h3><p>เข้ารหัสข้อมูลผู้ประเมินด้วย SHA-256 Hash แบบทางเดียว ตัดความเชื่อมโยงระหว่างบุคคลกับคะแนน</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🛡️</span><h3>Anonymity Shield</h3><p>Result Locking ล็อกรายงานเมื่อผู้ส่งน้อยกว่า 3 ราย · Variance Shield ล็อกเมื่อคะแนนแปรปรวนผิดปกติ · Timing Protection หน่วงแสดงผล 24 ชม.</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔀</span><h3>Hybrid Model</h3><p>รองรับทั้งระบบปิดที่ระบุรายชื่อผู้มีสิทธิ์ และระบบเปิดที่ใช้ QR Code สาธารณะ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🤖</span><h3>AI-Powered Forms</h3><p>สร้างแบบประเมินอัตโนมัติจากไฟล์ PDF/Docx โดยใช้ Google Gemini AI</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📥</span><h3>Bulk Import</h3><p>นำเข้ารายชื่อนักศึกษา/พนักงานจากไฟล์ Excel (.xlsx) และ Word (.docx)</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📡</span><h3>Live Tracking</h3><p>ติดตามสถานะการส่งแบบประเมินแยกรายบุคคล โดยไม่เห็นผลคะแนน</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📊</span><h3>Advanced Analytics</h3><p>รายงานผลสถิติด้วย Radar Chart, ค่าเฉลี่ย (Mean), และค่าเบี่ยงเบนมาตรฐาน (S.D.)</p></div>
+    </div>
+  </section>
+
+  <!-- 4. ANONYMITY SHIELD WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Anonymity Shield Workflow</p>
+    <h2 class="pd-heading">กลไกปกป้องความเป็นส่วนตัว</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>เข้ารหัสผู้ประเมิน</h3><p>ข้อมูลผู้ส่งถูกแปลงด้วย SHA-256 Hash แบบทางเดียวก่อนบันทึก</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>Result Locking</h3><p>รายงานผลถูกล็อกไว้จนกว่าจะมีผู้ส่งครบอย่างน้อย 3 รายการ</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>Variance Shield</h3><p>ตรวจจับความแปรปรวนของคะแนนที่สูงผิดปกติ และล็อกรายงานเพื่อป้องกันการเดาตัวบุคคล</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>Timing Protection</h3><p>หน่วงการแสดงผลรายงาน 24 ชั่วโมงหลังผู้ส่งล่าสุด เพื่อป้องกัน Timing Attack</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Frontend</span><p>Next.js 16 App Router<br>React 19 + Bootstrap 5</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Backend</span><p>Next.js API Routes<br>Mongoose ODM</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Database</span><p>MongoDB Atlas</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>External</span><p>Google Gemini API<br>NextAuth.js</p></div>
+    </div>
+    <p class="pd-note">การประมวลผลข้อมูลใช้ SheetJS สำหรับอ่านไฟล์ XLSX และ Mammoth สำหรับแปลงไฟล์ Docx ก่อนนำเข้าสู่ระบบ</p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16</span><span>React 19</span><span>Bootstrap 5</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Next.js API Routes</span><span>Mongoose</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>MongoDB Atlas</span></div></div>
+      <div class="pd-stack-group"><h3>Auth & AI</h3><div class="pd-badges"><span>NextAuth.js</span><span>Google Gemini API</span></div></div>
+      <div class="pd-stack-group"><h3>Data Processing</h3><div class="pd-badges"><span>SheetJS</span><span>Mammoth</span></div></div>
+      <div class="pd-stack-group"><h3>Visualization</h3><div class="pd-badges"><span>Chart.js</span><span>React-Chartjs-2</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ติดตั้ง Dependencies</h3><p>npm install</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>ตั้งค่า Environment Variables</h3><p>กำหนด MONGODB_URI, NEXTAUTH_SECRET และ GEMINI_API_KEY ใน .env</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เตรียมข้อมูลแอดมิน (Seed)</h3><p>npm run seed:admin</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>รันระบบ (Development)</h3><p>npm run dev</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">ผู้ประเมินกลัวถูกระบุตัวตนจากคำตอบ ทำให้ประเมินไม่ตรงความจริง</p><p class="pd-cs-after">เข้ารหัสข้อมูลผู้ส่งด้วย SHA-256 แบบทางเดียว ตัดความเชื่อมโยงระหว่างบุคคลกับคะแนนตั้งแต่ชั้นฐานข้อมูล</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">กลุ่มตัวอย่างเล็กเกินไปอาจทำให้เดาตัวบุคคลจากผลได้</p><p class="pd-cs-after">Result Locking และ Variance Shield ล็อกรายงานเมื่อจำนวนผู้ส่งน้อยหรือคะแนนแปรปรวนผิดปกติ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">การแสดงผลทันทีอาจเปิดช่องให้ระบุตัวผู้ส่งล่าสุดจากช่วงเวลา</p><p class="pd-cs-after">Timing Protection หน่วงการแสดงผล 24 ชั่วโมงหลังผู้ส่งล่าสุด เพื่อป้องกัน Timing Attack</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">การสร้างแบบประเมินด้วยมือใช้เวลานาน</p><p class="pd-cs-after">ใช้ Google Gemini AI สร้างแบบประเมินอัตโนมัติจากไฟล์ PDF/Docx ที่มีอยู่แล้ว</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>ปรับปรุงโครงสร้างความปลอดภัยตามรายละเอียดใน <code>REFACTOR_ISSUES.md</code></li>
+      <li>ขยายแผนการทดสอบทั้ง Manual และ Automated ตาม <code>TESTING_PLAN.md</code></li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>ยังไม่กำหนด — โปรเจกต์ส่วนตัว</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>Personal Project — Organizational Evaluation System</p></div>
+      <div class="pd-repo-card"><span>Documentation</span><p>ADMIN_GUIDE.md · TESTING_PLAN.md · REFACTOR_ISSUES.md (โฟลเดอร์ /docs)</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

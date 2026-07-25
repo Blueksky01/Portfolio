@@ -115,7 +115,16 @@ const FIGHTERS = [
 
 const roster = document.getElementById("roster");
 
-const DETAIL_PAGES = { cspts: "project-cspts.html" };
+const DETAIL_PAGES = {
+  cspts: "pages/project-cspts.html",
+  dorm: "pages/project-dorm.html",
+  evalpro: "pages/project-evalpro.html",
+  idolcard: "pages/project-idolcard.html",
+  jobhub: "pages/project-jobhub.html",
+  markethub: "pages/project-markethub.html",
+  sellingshirts: "pages/project-sellingshirts.html",
+  slcc: "pages/project-slcc.html",
+};
 
 FIGHTERS.forEach((f, i) => {
   const hue = i * (360 / FIGHTERS.length);

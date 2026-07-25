@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobHub — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🟢 Mobile App Project</p>
+  <h1 class="pd-hero-title">JobHub</h1>
+  <p class="pd-hero-tagline">แอปพลิเคชันหางาน/โพสต์งาน บน Flutter จัดการ state ด้วย GetX เชื่อมต่อ Backend ผ่าน REST API และ Socket เพื่อรองรับแชทและแจ้งเตือนแบบเรียลไทม์</p>
+  <div class="pd-hero-stack">
+    <span>Flutter</span><span>Dart</span><span>GetX</span><span>REST API</span><span>Socket.IO</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Not Available</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">JobHub เป็นแอปมือถือสำหรับหางานและโพสต์งาน พัฒนาด้วย <strong>Flutter</strong> โดยใช้ <strong>GetX</strong> เป็นตัวจัดการ state ทั้งหมด แอปเชื่อมต่อกับ Backend ผ่าน REST API สำหรับข้อมูลงาน การสมัคร และผู้ใช้ พร้อมใช้ Socket.IO เพื่อรองรับการแชทและการแจ้งเตือนแบบเรียลไทม์ระหว่างผู้ว่าจ้างกับผู้สมัคร</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">📱</span><p>โครงสร้างโปรเจกต์แบ่งชัดเจนตามหน้าที่ — controllers / services / model / screens / routes ตามแนวทาง GetX</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">💬</span><p>แชทและแจ้งเตือนทำงานแบบเรียลไทม์ผ่าน Socket.IO ไม่ต้องรอรีเฟรชหน้าจอ</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่แอปทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔐</span><h3>Authentication</h3><p>ลงทะเบียน เข้าสู่ระบบ ออกจากระบบ พร้อมจัดการ Token และ Session</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">💼</span><h3>Job Management</h3><p>Dashboard แสดงงานทั้งหมด ค้นหา/ดูรายละเอียดงาน โพสต์ แก้ไข และลบงาน</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📝</span><h3>Job Applications</h3><p>เก็บข้อมูลผู้สมัครผ่าน application model เชื่อมกับ API ของงาน</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">💬</span><h3>Real-time Chat</h3><p>ส่งและรับข้อความทันทีด้วย socket service และ chat controller</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔔</span><h3>Notifications</h3><p>ดึงการแจ้งเตือนจาก API แสดง badge จำนวน และเปิดดูรายละเอียดได้</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">👛</span><h3>Wallet</h3><p>จัดการธุรกรรมภายในแอปผ่านหน้ากระเป๋าเงินของผู้ใช้</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">👤</span><h3>User Profile</h3><p>ดูและแก้ไขข้อมูลส่วนตัวของผู้ใช้</p></div>
+    </div>
+  </section>
+
+  <!-- 4. SYSTEM WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">System Workflow</p>
+    <h2 class="pd-heading">เส้นทางการใช้งานแอป</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>สมัคร/เข้าสู่ระบบ</h3><p>ผู้ใช้ล็อกอินผ่าน auth_service และ auth_controller</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>ดูงานบน Dashboard</h3><p>เรียกดูรายการงานทั้งหมดและค้นหางานที่สนใจ</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>สมัครงาน / โพสต์งาน</h3><p>ผู้สมัครยื่นใบสมัคร หรือผู้ว่าจ้างโพสต์งานใหม่</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>แชทระหว่างกัน</h3><p>สื่อสารแบบเรียลไทม์ผ่าน socket_service</p></div></li>
+      <li><span class="pd-tl-dot">5</span><div><h3>รับการแจ้งเตือน</h3><p>ระบบแจ้งเตือนความเคลื่อนไหวสำคัญผ่าน notification_service</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>App</span><p>Flutter + Dart<br>GetX Controllers</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Services</span><p>auth · job · chat<br>notification · wallet</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Backend</span><p>REST API<br>Socket.IO</p></div>
+    </div>
+    <p class="pd-note">โครงสร้าง <code>lib/</code> แบ่งตามหน้าที่ชัดเจน: <code>controllers/</code> จัดการ state, <code>services/</code> คุยกับ API และ Socket, <code>screens/</code> เป็น UI, <code>model/</code> เก็บโครงสร้างข้อมูล</p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>App</h3><div class="pd-badges"><span>Flutter</span><span>Dart</span></div></div>
+      <div class="pd-stack-group"><h3>State Management</h3><div class="pd-badges"><span>GetX</span></div></div>
+      <div class="pd-stack-group"><h3>Connectivity</h3><div class="pd-badges"><span>REST API</span><span>Socket.IO</span></div></div>
+      <div class="pd-stack-group"><h3>Utilities</h3><div class="pd-badges"><span>intl</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบโครงสร้างโปรเจกต์</h3><p>แบ่ง lib/ เป็น controllers, services, model, screens, routes</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้างระบบ Authentication</h3><p>auth_service + auth_controller จัดการ token และ session</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>พัฒนา Job CRUD</h3><p>job_service เชื่อมกับหน้า dashboard, create, edit, detail</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เพิ่ม Real-time Layer</h3><p>socket_service สำหรับแชทและ notification_service สำหรับแจ้งเตือน</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เติมฟีเจอร์ Wallet และ Profile</h3><p>wallet_service และ profilePage ปิดท้ายฟีเจอร์หลักของแอป</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">การแจ้งเตือนและแชทต้องอัปเดตทันที ไม่ใช่รอโหลดหน้าใหม่</p><p class="pd-cs-after">ใช้ Socket.IO ผ่าน socket_service ให้ chat และ notification ทำงานแบบเรียลไทม์</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">state ของแอปกระจาย จัดการยากเมื่อฟีเจอร์เพิ่มขึ้น</p><p class="pd-cs-after">รวมศูนย์ด้วย GetX controller แยกตามโดเมน เช่น auth, chat, notification</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">โค้ด UI และ logic การเรียก API ปนกัน</p><p class="pd-cs-after">แยกชั้น services/ ออกจาก screens/ ให้แต่ละหน้าจอเรียกใช้ผ่าน controller เท่านั้น</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>ระบบค้นหางานด้วย Filter ที่ละเอียดขึ้น</li>
+      <li>ระบบรีวิว/เรตติ้งผู้ว่าจ้างและผู้สมัคร</li>
+      <li>ระบบกระเป๋าเงินที่รองรับการจ่ายจริง</li>
+      <li>Dark Mode</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>ยังไม่กำหนด</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>Mobile App Project (Frontend)</p></div>
+      <div class="pd-repo-card"><span>Team</span><p>Frontend และ Backend พัฒนาโดยทีม JobHub</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

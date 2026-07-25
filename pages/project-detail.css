@@ -21,7 +21,7 @@ main{max-width:980px;margin:0 auto;padding:0 20px 80px}
   font-weight:600;margin-bottom:14px;
 }
 .pd-hero-title{
-  font-family:"Anton",sans-serif;font-size:clamp(2.6rem,8vw,4.6rem);
+  font-family:"Anton","Prompt",sans-serif;font-size:clamp(2.6rem,8vw,4.6rem);
   letter-spacing:2px;
   background:linear-gradient(180deg,#8f1a26,var(--p1));
   -webkit-background-clip:text;background-clip:text;color:transparent;

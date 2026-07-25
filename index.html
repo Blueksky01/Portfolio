@@ -8,12 +8,24 @@
 </head>
 <body>
 
-<div id="select-screen" class="screen active">
-  <header class="topbar">
-    <h1>⚔ FIGHTER SELECT</h1>
-    <p>เลือกผลงาน</p>
-  </header>
-  <div id="roster" class="roster"></div>
+<div id="landing-screen" class="screen active">
+  <section class="landing-box">
+    <div class="landing-portrait"></div>
+    <h1 class="landing-name">Weerawat Tammung</h1>
+    <p class="landing-sub">Portfolio</p>
+    <div class="landing-links">
+      <a href="mailto:weerawat7904@gmail.com">Email</a>
+      <a href="https://github.com/Blueksky01" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+
+  <section class="roster-section">
+    <header class="topbar">
+      <h1>⚔ WORKS</h1>
+      <p>ผลงานทั้งหมด</p>
+    </header>
+    <div id="roster" class="roster"></div>
+  </section>
 </div>
 
 <div id="detail-screen" class="screen">
@@ -33,7 +45,7 @@
     <div class="fighter-showcase">
       <div class="rank-badge" id="f-rank">SSR</div>
       <div class="stars" id="f-stars">★★★★</div>
-      <div class="portrait" id="f-portrait">🥋</div>
+      <div class="portrait-ring"><div class="portrait" id="f-portrait"></div></div>
       <h2 class="fighter-name" id="f-name">NAME</h2>
       <p class="fighter-level" id="f-tagline">Level:1</p>
     </div>

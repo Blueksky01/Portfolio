@@ -44,22 +44,42 @@ body{
   margin:0 auto;
   padding:24px;
 }
+.fighter-card-wrap{position:relative;cursor:pointer}
 .fighter-card{
-  position:relative;
   background:linear-gradient(160deg,var(--panel2),var(--panel));
   border:2px solid #2a3142;
   clip-path:polygon(0 0,100% 0,100% 88%,88% 100%,0 100%);
   padding:16px 12px;
-  cursor:pointer;
   transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;
   text-align:center;
 }
-.fighter-card:hover{
+.fighter-card-wrap:hover .fighter-card{
   transform:translateY(-6px) scale(1.03);
   border-color:var(--gold);
   box-shadow:0 8px 24px rgba(232,196,104,.25);
 }
-.fighter-card .icon{font-size:2.6rem;margin-bottom:8px}
+
+.card-preview{
+  position:absolute;left:50%;bottom:calc(100% + 8px);
+  transform:translateX(-50%) translateY(6px);
+  width:220px;background:var(--panel);border:1px solid var(--gold);
+  padding:12px;z-index:20;text-align:left;
+  opacity:0;pointer-events:none;
+  transition:opacity .15s ease,transform .15s ease;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);
+}
+.fighter-card-wrap:hover .card-preview{
+  opacity:1;transform:translateX(-50%) translateY(0);
+}
+.preview-tagline{color:var(--gold);font-size:.8rem;font-weight:700;margin-bottom:4px}
+.preview-why{color:var(--muted);font-size:.75rem;line-height:1.4}
+.fighter-card .icon{
+  width:80px;height:80px;margin:0 auto 8px;
+  border-radius:50%;
+  background:linear-gradient(160deg,#4a5570,#242b3c);
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 100 6 3 3 0 000-6zM7 22l1.2-8L6 12l1-5 3-1h4l3 1 1 5-2.2 2L17 22h-3l-.8-6h-2.4l-.8 6H7z"/></svg>') center/78% no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 100 6 3 3 0 000-6zM7 22l1.2-8L6 12l1-5 3-1h4l3 1 1 5-2.2 2L17 22h-3l-.8-6h-2.4l-.8 6H7z"/></svg>') center/78% no-repeat;
+}
 .fighter-card .name{font-weight:700;font-size:.95rem}
 .fighter-card .rank{
   position:absolute;top:8px;right:8px;
@@ -117,10 +137,17 @@ body{
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 .stars{color:var(--gold);letter-spacing:2px;margin-bottom:16px}
+.portrait-ring{
+  width:220px;height:220px;margin:8px auto 16px;
+  border-radius:50%;border:3px solid var(--gold);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
 .portrait{
-  font-size:7rem;line-height:1;
-  filter:drop-shadow(0 10px 30px rgba(74,163,223,.35));
-  margin:8px 0 16px;
+  width:100%;height:100%;
+  border-radius:50%;
+  background:linear-gradient(160deg,#4a5570,#242b3c);
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 100 6 3 3 0 000-6zM7 22l1.2-8L6 12l1-5 3-1h4l3 1 1 5-2.2 2L17 22h-3l-.8-6h-2.4l-.8 6H7z"/></svg>') center/72% no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 100 6 3 3 0 000-6zM7 22l1.2-8L6 12l1-5 3-1h4l3 1 1 5-2.2 2L17 22h-3l-.8-6h-2.4l-.8 6H7z"/></svg>') center/72% no-repeat;
 }
 .fighter-name{
   font-size:1.5rem;letter-spacing:2px;color:#fff;
@@ -158,15 +185,15 @@ body{
   padding:10px 14px;font-size:.85rem;color:var(--muted);
 }
 .skill-badge{
-  background:var(--red);color:#fff;font-size:.7rem;
+  background:var(--panel2);color:var(--gold);font-size:.7rem;
   padding:3px 8px;letter-spacing:1px;border-radius:2px;
-  flex-shrink:0;
+  flex-shrink:0;border:1px solid #2a3142;
 }
 
 .skills-row{display:flex;flex-wrap:wrap;gap:10px}
 .tech-pill{
   background:var(--panel2);border:1px solid #2a3142;
-  color:var(--blue);font-size:.75rem;
+  color:var(--text);font-size:.75rem;
   padding:8px 12px;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
 }
 
@@ -175,3 +202,27 @@ body{
   border:1px solid var(--gold);
   padding:14px;font-size:.85rem;line-height:1.6;color:#f0dfb0;
 }
+
+/* ---------- LANDING SCREEN ---------- */
+.landing-box{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;text-align:center;padding:24px;
+}
+.landing-portrait{
+  width:140px;height:140px;border-radius:50%;
+  border:3px solid var(--gold);
+  background:linear-gradient(160deg,#4a5570,#242b3c);
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 100 6 3 3 0 000-6zM7 22l1.2-8L6 12l1-5 3-1h4l3 1 1 5-2.2 2L17 22h-3l-.8-6h-2.4l-.8 6H7z"/></svg>') center/62% no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a3 3 0 100 6 3 3 0 000-6zM7 22l1.2-8L6 12l1-5 3-1h4l3 1 1 5-2.2 2L17 22h-3l-.8-6h-2.4l-.8 6H7z"/></svg>') center/62% no-repeat;
+}
+.landing-name{font-size:1.8rem;letter-spacing:2px;color:var(--text)}
+.landing-sub{color:var(--muted);letter-spacing:1px}
+.landing-links{display:flex;gap:16px;margin-top:4px}
+.landing-links a{
+  color:var(--gold);text-decoration:none;font-size:.9rem;
+  border:1px solid var(--gold);padding:6px 14px;
+}
+.landing-links a:hover{background:var(--gold);color:#1a1408}
+
+.roster-section{padding-bottom:60px}

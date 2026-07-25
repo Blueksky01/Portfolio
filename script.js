@@ -14,6 +14,34 @@ const FIGHTERS = [
     ultimate: "transitionTaskInstance() เป็นคอขวดเดียวที่เขียน state — ทุก transition emit DomainEvent เสมอ, milestone-worthy เขียน Timeline อัตโนมัติ"
   },
   {
+    id: "assess2026",
+    name: "Assess2026",
+    tagline: "แบบสำรวจชีพจรองค์กร",
+    icon: "AS",
+    hp: 2800, atk: 400, def: 360, adef: 400,
+    desc: "ระบบแบบสำรวจชีพจรองค์กรของมหาวิทยาลัยราชภัฏศรีสะเกษ บุคลากรกว่า 1,000 คนทำแบบสำรวจ 3 ชุดต่อปี คำตอบเป็น anonymous ผู้ดูแลดูผลรวมเป็นค่าเฉลี่ยรายหน่วยงาน",
+    why: "Anonymity โดยโครงสร้างข้อมูล ไม่ใช่โดยกฎ — แยกคำตอบออกจากผู้ใช้เป็นคนละตาราง",
+    before: "ถ้าเก็บ userId ไว้กับคำตอบ ผู้ดูแลย้อนดูได้ว่าใครให้คะแนนหัวหน้าเท่าไร คนไม่กล้าตอบตามจริง",
+    after: "เขียน Response กับ Participation คนละตารางแบบไม่มี foreign key เชื่อมกัน ตอบได้ว่าใครส่งแล้วแต่ตอบไม่ได้ว่าให้คะแนนเท่าไร",
+    features: ["3 แบบสำรวจตายตัว K1/K2/K3 รวม 4 การส่งต่อคนต่อปี", "Admin import รายชื่อจาก Excel ผู้ใช้แค่จับคู่ตัวเองแล้วตั้งรหัสผ่าน", "Response กับ Participation แยกตาราง ไม่มี FK เชื่อมกัน รักษา anonymity", "Server Actions ทั้งหมด re-check auth() ทุกครั้งในตัวมันเอง", "ผลรวมเป็น heatmap รายหน่วยงาน + export Excel"],
+    stack: ["Next.js 16", "React 19", "NextAuth v5", "Prisma 7", "PostgreSQL", "Zod 4", "ExcelJS"],
+    ultimate: "unique index บน Participation ใช้ NULLS NOT DISTINCT กันส่งซ้ำ บังคับที่ระดับ DB ไม่ใช่แค่เช็คในโค้ด"
+  },
+  {
+    id: "receipts",
+    name: "Robotic Receipts",
+    tagline: "ระบบออกใบเสร็จรับเงิน",
+    icon: "RC",
+    hp: 2200, atk: 360, def: 300, adef: 280,
+    desc: "ระบบจัดการคำขอใบเสร็จรับเงินสำหรับผู้สมัครแข่งขันหุ่นยนต์ ใช้งานจริงในโครงการ ผู้ใช้ยื่นขอเองได้ พิมพ์ใบเสร็จ A4 แปลงยอดเป็นตัวอักษรไทยอัตโนมัติ",
+    why: "Self-issue receipt ตัดคอขวดที่ต้องรอแอดมินอนุมัติทุกใบ",
+    before: "ทุกใบเสร็จต้องผ่านแอดมินอนุมัติ ผู้ใช้รอนาน แอดมินต้องคีย์/รวมยอดเองเมื่อสมัครหลายรายการ",
+    after: "ผู้ใช้ยื่นคำขอเอง รวมหลายรายการสมัครเป็นใบเสร็จเดียวพร้อมคำนวณยอดอัตโนมัติ แอดมินตรวจย้อนหลังได้",
+    features: ["ยื่นคำขอใบเสร็จเอง (self-issue) ไม่ต้องรอแอดมินอนุมัติทุกครั้ง", "รวมหลายรายการสมัครเป็นใบเสร็จเดียว คำนวณยอดรวมอัตโนมัติ", "หน้าพิมพ์ใบเสร็จ A4 แปลงจำนวนเงินเป็นตัวอักษรไทยอัตโนมัติ", "ฟอร์มที่อยู่แบบลำดับหมวดหมู่ จังหวัด → อำเภอ → ตำบล", "แอดมินตรวจสอบคำขอย้อนหลังได้แม้ผู้ใช้ออกเองแล้ว"],
+    stack: ["Next.js", "TypeScript", "Prisma"],
+    ultimate: "หนึ่งใบเสร็จรวมได้หลายรายการสมัครของผู้ใช้/ผู้ชำระเงินคนเดียวกัน แอดมินตรวจสอบย้อนหลังได้เสมอ"
+  },
+  {
     id: "dorm",
     name: "Dorm Project",
     tagline: "หอพัก + OCR สลิป",
@@ -124,6 +152,8 @@ const DETAIL_PAGES = {
   markethub: "pages/project-markethub.html",
   sellingshirts: "pages/project-sellingshirts.html",
   slcc: "pages/project-slcc.html",
+  receipts: "pages/project-receipts.html",
+  assess2026: "pages/project-assess2026.html",
 };
 
 FIGHTERS.forEach((f, i) => {
@@ -155,4 +185,19 @@ if (heroNav) {
   const toggleNavBg = () => heroNav.classList.toggle("is-scrolled", window.scrollY > 10);
   toggleNavBg();
   window.addEventListener("scroll", toggleNavBg, { passive: true });
+}
+
+const navToggle = document.getElementById("navToggle");
+const navLinks = document.getElementById("navlinks");
+if (navToggle && navLinks) {
+  navToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open);
+  });
+  navLinks.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
 }

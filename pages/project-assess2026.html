@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>assess2026 — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="../index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+
+  <h1 class="pd-hero-title">assess2026</h1>
+  <p class="pd-hero-tagline">ระบบแบบสำรวจชีพจรองค์กร (Organizational Pulse Survey) สำหรับมหาวิทยาลัยราชภัฏศรีสะเกษ ออกแบบให้คำตอบเป็น anonymous โดยโครงสร้างฐานข้อมูล ไม่ใช่แค่กฎในโค้ด</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>Prisma 7</span><span>PostgreSQL</span><span>NextAuth v5</span><span>TypeScript</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">assess2026 เก็บคะแนนแบบสำรวจชีพจรองค์กรจากบุคลากรกว่า 1,000 คน แล้วสรุปเป็นค่าเฉลี่ยรายหน่วยงานให้ผู้บริหารดูภาพรวม <strong>anonymity คือหัวใจของระบบ ไม่ใช่ feature เสริม</strong> — ผู้ถูกประเมินต้องระบุตัวผู้ประเมินไม่ได้เด็ดขาด ระบบไม่ใช่เครื่องมือประเมินผลงานรายบุคคล ไม่ใช่ระบบ HR/payroll และไม่ใช่ survey builder ทั่วไป (มี 3 ชุดตายตัว แก้ข้อคำถามได้ แต่สร้างชุดใหม่ไม่ได้)</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🕶️</span><p>คำตอบแยกออกจากผู้ใช้เป็นคนละตารางตั้งแต่ระดับ schema ไม่มี foreign key เชื่อมกลับ — anonymous โดยโครงสร้าง ไม่ใช่โดยกฎ</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">📥</span><p>Import-first: admin นำเข้ารายชื่อ + หน่วยงานล่วงหน้า ผู้ใช้แค่ยืนยันตัวตนกับ record ที่มีอยู่ ป้องกันคนนอกปั่นคะแนน</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🕶️</span><h3>Anonymous by Structure</h3><p>Response กับ Participation แยกกันคนละตาราง เขียนใน transaction เดียวแต่ไม่มี FK เชื่อม</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📥</span><h3>Import-first Registration</h3><p>admin นำเข้ารายชื่อจาก Excel ก่อน ผู้ใช้จับคู่ตัวเองแล้วตั้ง username/password เอง</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📋</span><h3>3 แบบสำรวจ (K1/K2/K3)</h3><p>Strategic Compass, Workforce Health, Executive Vitality — K3 ส่ง 2 รอบ (SUPERIOR/RECTOR)</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔒</span><h3>Append-only Submission</h3><p>ส่งได้ครั้งเดียวต่อ user/form/year/target บังคับด้วย unique index ใน DB ไม่ใช่แค่เช็คโค้ด</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🗺️</span><h3>Admin Results Heatmap</h3><p>ดูค่าเฉลี่ยรายหน่วยงานเป็น heatmap table พร้อม filter ตามปีและมิติ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📊</span><h3>Excel Export</h3><p>สร้าง .xlsx สตรีมตรงจาก API route ด้วย ExcelJS สำหรับนำผลไปใช้ต่อ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🛠️</span><h3>Editable Form Config</h3><p>แก้ข้อคำถามของ K1/K2/K3 ได้จากฝั่ง admin โดยไม่ต้อง deploy ใหม่</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🌐</span><h3>Public Transparency View</h3><p>หน้า landing แสดงความคืบหน้ารายหน่วยงานแบบเปิดเผยให้ทุกคนเห็น ไม่ต้องล็อกอิน</p></div>
+    </div>
+  </section>
+
+  <!-- 4. SYSTEM WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">System Workflow</p>
+    <h2 class="pd-heading">เส้นทางของผู้ใช้ 1 คน</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>Admin Import</h3><p>นำเข้ารายชื่อ + หน่วยงานจาก Excel ล่วงหน้า</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>ลงทะเบียนขั้น 1</h3><p>กรอกชื่อ-นามสกุล-หน่วยงาน เพื่อหา record ที่ตรง</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>ลงทะเบียนขั้น 2</h3><p>ยืนยันเลขบัตร 13 หลัก ตั้ง password ≥ 8 ตัว</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>Login</h3><p>เข้าระบบ เห็นสถานะ 4 แบบสำรวจของปีที่ active</p></div></li>
+      <li><span class="pd-tl-dot">5</span><div><h3>ส่งแบบสำรวจ</h3><p>K1, K2, K3-SUPERIOR, K3-RECTOR — ส่งแล้วแก้ไม่ได้</p></div></li>
+      <li><span class="pd-tl-dot">6</span><div><h3>ครบ 4 ชุด</h3><p>จบรอบสำหรับปีการประเมินนั้น</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Client</span><p>Client Component (form)<br>เรียก Server Action ตรง ไม่ผ่าน REST</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Server Action</span><p>src/lib/actions.ts<br>auth() + Zod + business rules</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Prisma Client</span><p>src/lib/db.ts<br>adapter-pg</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Database</span><p>PostgreSQL<br>Response / Participation แยกตาราง</p></div>
+    </div>
+    <p class="pd-note">Business logic อยู่ที่เดียว: <code>src/lib/actions.ts</code> — ไม่มี service layer ไม่มี controller ทุก mutating action เรียก <code>auth()</code> ซ้ำในตัวเอง เพราะ Server Actions คือ public POST endpoint ห้ามเชื่อว่า caller ผ่าน UI มาแล้ว</p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16 (Turbopack)</span><span>React 19</span><span>React Compiler</span><span>TypeScript</span><span>Bootstrap 5 (SCSS)</span><span>lucide-react</span><span>SweetAlert2</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Server Actions</span><span>NextAuth v5 (JWT)</span><span>Zod 4</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>Prisma 7.8</span><span>@prisma/adapter-pg</span><span>PostgreSQL</span></div></div>
+      <div class="pd-stack-group"><h3>DevOps / Infra</h3><div class="pd-badges"><span>Docker Compose</span><span>ExcelJS</span><span>Nginx (host TLS termination)</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบ Data Model</h3><p>AssessmentYear → Response / Participation แยกกัน ไม่มี FK เชื่อม เพื่อความเป็น anonymous</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>วาง Server Actions Layer</h3><p>รวม business logic ไว้ที่ src/lib/actions.ts ที่เดียว เริ่มจาก submitForm</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้าง Import-first Flow</h3><p>นำเข้าผู้ใช้จาก Excel ก่อน แล้วค่อยเปิดให้ลงทะเบียนแบบ 2 ขั้นตอน</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เพิ่ม FormConfig แบบ data-driven</h3><p>ให้ admin แก้ข้อคำถามได้จาก DB โดยไม่ต้อง deploy ใหม่</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>ทำ Results + Export + Deploy</h3><p>heatmap, Excel export ผ่าน ExcelJS และ Docker Compose deploy หลัง nginx</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">ถ้าเก็บ userId ไว้กับคำตอบ ผู้ดูแลระบบย้อนดูได้ว่าใครให้คะแนนหัวหน้าเท่าไร คนไม่กล้าตอบตามจริง</p><p class="pd-cs-after">แยก Response กับ Participation เป็นคนละตาราง ไม่มี foreign key เชื่อมกัน และตัด timestamp เหลือแค่ @db.Date กัน join ย้อนกลับ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">เปิดสมัครเสรีจะโดนคนนอกปั่นคะแนน และหน่วยงานที่กรอกเองอาจเพี้ยนจน aggregate ไม่ตรง</p><p class="pd-cs-after">Import-first — admin นำเข้ารายชื่อ + หน่วยงานก่อน ผู้ใช้แค่จับคู่ตัวเองกับ record ที่มีอยู่แล้ว</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">Server Actions เป็น public POST endpoint เรียกตรงได้โดยไม่ผ่าน UI</p><p class="pd-cs-after">ทุก action ที่เขียนข้อมูลเรียก auth() ซ้ำในตัวเอง และ action ฝั่ง admin เช็ค role === "ADMIN" ซ้ำอีกชั้น</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">K1/K2 มี target เป็น NULL — ถ้าใช้ unique index ปกติ Postgres จะยอมให้ NULL ซ้ำ ทำให้ส่งซ้ำได้</p><p class="pd-cs-after">เขียน raw SQL migration บังคับ unique index แบบ NULLS NOT DISTINCT เพราะ Prisma schema สร้าง syntax นี้เองไม่ได้</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>เพิ่ม test framework ให้ครบ (ปัจจุบันยังไม่มี test runner ตั้งไว้ในโปรเจกต์)</li>
+      <li>ถอน dependency ที่เหลือจาก shadcn/Tailwind รอบก่อน (tailwind-merge, class-variance-authority, radix-ui) ที่ยังค้างใน package.json</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>UNLICENSED — ใช้ภายในมหาวิทยาลัยราชภัฏศรีสะเกษ</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>Production System — University Internal Tool</p></div>
+      <div class="pd-repo-card"><span>Deployment</span><p>Docker Compose (db + migrate + web) หลัง Nginx reverse proxy ที่ assess.sskru.ac.th</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

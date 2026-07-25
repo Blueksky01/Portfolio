@@ -115,12 +115,12 @@ body{
   font-family:"Oswald",Tahoma,sans-serif;
   position:relative;overflow:hidden;
   min-height:100vh;
-  padding:28px clamp(20px,5vw,64px);
+  padding:96px clamp(20px,5vw,64px) 28px;
   background:#0d0e14;
 }
 .hero-bg{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center;z-index:0;
+  object-fit:cover;object-position:center top;z-index:0;
 }
 .hero::before,.hero::after{
   content:"";position:absolute;top:0;bottom:0;width:55%;
@@ -141,9 +141,21 @@ body{
 }
 
 .hero-nav{
-  position:relative;z-index:2;
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  padding:16px clamp(20px,5vw,64px);
+  background:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  transition:background .25s ease,backdrop-filter .25s ease;
+}
+.hero-nav.is-scrolled{
+  background:rgba(13,14,20,.7);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+}
+.hero-nav-inner{
   display:flex;align-items:center;justify-content:space-between;
-  max-width:1400px;margin:0 auto 40px;
+  max-width:1400px;margin:0 auto;
 }
 .hero-logo{
   display:flex;align-items:center;gap:10px;

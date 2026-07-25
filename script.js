@@ -149,3 +149,10 @@ FIGHTERS.forEach((f, i) => {
   }
   roster.appendChild(wrap);
 });
+
+const heroNav = document.querySelector(".hero-nav");
+if (heroNav) {
+  const toggleNavBg = () => heroNav.classList.toggle("is-scrolled", window.scrollY > 10);
+  toggleNavBg();
+  window.addEventListener("scroll", toggleNavBg, { passive: true });
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSPTS — Project Detail</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<a href="index.html" class="pd-back">← Home</a>
+
+<!-- 1. HERO -->
+<header class="pd-hero" data-reveal>
+  <p class="pd-hero-status">🟢 Coursework Project — Active Development</p>
+  <h1 class="pd-hero-title">CSPTS</h1>
+  <p class="pd-hero-tagline">ระบบติดตามวงจรชีวิตโครงงานคอมพิวเตอร์ ตั้งแต่เสนอเค้าโครงจนถึงส่งเล่ม ขับเคลื่อนด้วย data-driven lifecycle engine</p>
+  <div class="pd-hero-stack">
+    <span>Next.js 16</span><span>React 19</span><span>Prisma 7</span><span>PostgreSQL</span><span>TypeScript</span>
+  </div>
+  <div class="pd-hero-links">
+    <a href="https://github.com/Blueksky01" target="_blank" rel="noopener" class="pd-btn pd-btn-primary">GitHub Profile ↗</a>
+    <span class="pd-btn pd-btn-ghost" aria-disabled="true">Live Demo — Private (University System)</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- 2. OVERVIEW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Overview</p>
+    <h2 class="pd-heading">โครงงานคืออะไร</h2>
+    <p class="pd-lead">CSPTS จำลอง<strong>กระบวนการควบคุมโครงงานจริงของมหาวิทยาลัย</strong>ให้เป็นระบบดิจิทัลเต็มรูปแบบ ไม่ใช่แค่ที่เก็บเอกสาร — ระบบรับผิดชอบความคืบหน้าโครงงาน การทำ task มติกรรมการ การมอบหมายอาจารย์ที่ปรึกษา คำร้องขอเปลี่ยนแปลง และ timeline ทั้งหมด โดยเอกสารเป็นเพียง "หลักฐาน" ว่างานเสร็จ ไม่ใช่แกนหลักของระบบ</p>
+    <div class="pd-grid-2" data-stagger>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🎯</span><p>ทุกฟีเจอร์ต้อง map กับขั้นตอนจริงในกระบวนการควบคุมโครงงาน — ถ้าหาคู่ในโลกจริงไม่เจอ แปลว่าไม่ควรมี</p></div>
+      <div class="pd-mini-card"><span class="pd-mini-icon">🇹🇭</span><p>UI เป็นภาษาไทยทั้งหมด ออกแบบให้นักศึกษาและอาจารย์ใช้งานได้ทันทีโดยไม่ต้องอบรม</p></div>
+    </div>
+  </section>
+
+  <!-- 3. FEATURES -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Features</p>
+    <h2 class="pd-heading">สิ่งที่ระบบทำได้</h2>
+    <div class="pd-feature-grid" data-stagger>
+      <div class="pd-feature-card"><span class="pd-feature-icon">⚙️</span><h3>Lifecycle Engine</h3><p>โครงงานเดินผ่าน 6 milestone ตามลำดับ แต่ละ milestone มี task ของตัวเอง</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔗</span><h3>Task Dependency</h3><p>task ประกาศ dependsOn ทำเสร็จหนึ่งตัว ปลดล็อกตัวถัดไปอัตโนมัติ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">✍️</span><h3>Digital Decision</h3><p>บันทึกมติแบบ append-only ตั้งค่า quorum และลำดับผู้อนุมัติได้จากข้อมูล</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔄</span><h3>Change Request</h3><p>ขอเปลี่ยนสมาชิก / ชื่อเรื่อง / อาจารย์ที่ปรึกษา / ขอบเขต พร้อมสายอนุมัติ</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📋</span><h3>Assessment Template</h3><p>เกณฑ์ประเมินสอบแก้ไขได้จากฝั่ง admin แยก version ตามปีการศึกษา</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🕓</span><h3>Timeline + Audit Trail</h3><p>Timeline เล่าเรื่องเชิงธุรกิจ DomainEvent บันทึกทุก transition แบบเทคนิค</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">📡</span><h3>Live Update (SSE)</h3><p>ข้อมูลอัปเดตแบบเรียลไทม์ผ่าน Server-Sent Events ไม่ต้องรีเฟรช</p></div>
+      <div class="pd-feature-card"><span class="pd-feature-icon">🔔</span><h3>Notification + Email</h3><p>แจ้งเตือนทั้งในระบบและทางอีเมลเมื่อมีความเคลื่อนไหวสำคัญ</p></div>
+    </div>
+  </section>
+
+  <!-- 4. SYSTEM WORKFLOW -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">System Workflow</p>
+    <h2 class="pd-heading">เส้นทางของโครงงาน 1 ชิ้น</h2>
+    <ol class="pd-timeline" data-stagger>
+      <li><span class="pd-tl-dot">1</span><div><h3>เสนอเค้าโครง</h3><p>เลือกอาจารย์ที่ปรึกษาและเสนอเค้าโครงโครงงาน</p></div></li>
+      <li><span class="pd-tl-dot">2</span><div><h3>สอบหัวข้อ</h3><p>Topic Defense ต่อหน้ากรรมการ</p></div></li>
+      <li><span class="pd-tl-dot">3</span><div><h3>รายงานความก้าวหน้า</h3><p>ติดตามความคืบหน้าระหว่างการพัฒนา</p></div></li>
+      <li><span class="pd-tl-dot">4</span><div><h3>สอบ 3 บท</h3><p>Midterm Defense</p></div></li>
+      <li><span class="pd-tl-dot">5</span><div><h3>สอบ 5 บท</h3><p>Final Defense</p></div></li>
+      <li><span class="pd-tl-dot">6</span><div><h3>ส่งเล่ม</h3><p>ปิดวงจรโครงงาน พร้อมขึ้น Showcase</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 5. ARCHITECTURE -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Architecture</p>
+    <h2 class="pd-heading">โครงสร้างระบบ</h2>
+    <div class="pd-arch-flow" data-stagger>
+      <div class="pd-arch-box"><span>Frontend</span><p>Next.js 16 App Router<br>React 19 + Bootstrap 5</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Backend</span><p>Route Handlers<br>Controller → Service → lifecycleRuntime</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>Database</span><p>Prisma 7 ORM<br>PostgreSQL</p></div>
+      <div class="pd-arch-arrow">→</div>
+      <div class="pd-arch-box"><span>External</span><p>Google Cloud Storage<br>Cloudinary · Gmail SMTP</p></div>
+    </div>
+    <p class="pd-note">กฎเดียว: <code>transitionTaskInstance()</code> เป็นจุดเดียวที่เขียน state ของ TaskInstance — ทุกชั้นเดินตามเส้นทางเดียวกัน ไม่มีทางลัดวนกลับ</p>
+  </section>
+
+  <!-- 6. TECH STACK -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Tech Stack</p>
+    <h2 class="pd-heading">เครื่องมือที่ใช้</h2>
+    <div class="pd-stack-groups" data-stagger>
+      <div class="pd-stack-group"><h3>Frontend</h3><div class="pd-badges"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Bootstrap 5</span><span>dnd-kit</span><span>SweetAlert2</span></div></div>
+      <div class="pd-stack-group"><h3>Backend</h3><div class="pd-badges"><span>Route Handlers</span><span>Prisma 7</span><span>Server-Sent Events</span><span>NextAuth</span></div></div>
+      <div class="pd-stack-group"><h3>Database</h3><div class="pd-badges"><span>PostgreSQL</span></div></div>
+      <div class="pd-stack-group"><h3>DevOps / Infra</h3><div class="pd-badges"><span>Docker</span><span>Google Cloud Storage</span><span>Cloudinary</span><span>Nodemailer</span></div></div>
+    </div>
+  </section>
+
+  <!-- 7. DEVELOPMENT PROCESS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Development Process</p>
+    <h2 class="pd-heading">ลำดับการพัฒนา</h2>
+    <ol class="pd-timeline pd-timeline-alt" data-stagger>
+      <li><span class="pd-tl-dot">•</span><div><h3>ออกแบบ Domain Model</h3><p>Project → ProjectState → Task → TaskInstance</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>สร้าง Lifecycle Engine</h3><p>lifecycleRuntime.transitionTaskInstance() เป็นคอขวดเดียวของ state</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เพิ่ม Task Behaviors</h3><p>FORM · FILE_UPLOAD · RUBRIC · MEETING · ADVISOR_ASSIGNMENT · APPLY_PROJECT_CHANGE</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>วาง Permission Layer</h3><p>DecisionPolicy แบบ data-driven ไม่ hardcode สิทธิ์ในโค้ด</p></div></li>
+      <li><span class="pd-tl-dot">•</span><div><h3>เชื่อม Realtime + Deploy</h3><p>SSE สำหรับ live update และ Docker + LibreOffice สำหรับแปลงไฟล์</p></div></li>
+    </ol>
+  </section>
+
+  <!-- 8. CHALLENGES & SOLUTIONS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Challenges & Solutions</p>
+    <h2 class="pd-heading">ปัญหาที่พบ กับวิธีแก้</h2>
+    <div class="pd-cs-grid" data-stagger>
+      <div class="pd-cs-card"><p class="pd-cs-before">เอกสารกระจัดกระจาย ไม่รู้ว่าติดที่ใคร</p><p class="pd-cs-after">ทุกขั้นเป็น Task ที่มี state ชัดเจน TaskInstance บอกตรงว่ารออะไร/รอใคร</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ลำดับขั้นตอนอยู่ในหัวคน จำเองต้องรู้เอง</p><p class="pd-cs-after">dependsOn บังคับลำดับให้อัตโนมัติ ทำ task ถัดไปได้ก็ต่อเมื่อ dependency ผ่าน</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">ลายเซ็นอนุมัติหาย ตรวจย้อนหลังไม่ได้</p><p class="pd-cs-after">Decision แบบ append-only บันทึกทุกมติถาวร ผูกกับ DomainEvent เสมอ</p></div>
+      <div class="pd-cs-card"><p class="pd-cs-before">เปลี่ยนระเบียบทีต้องแก้โค้ดที</p><p class="pd-cs-after">กติกาเก็บเป็นข้อมูล (DecisionPolicy) ไม่ใช่ if กระจายในโค้ด แก้ข้อมูลไม่ต้อง deploy ใหม่</p></div>
+    </div>
+  </section>
+
+  <!-- 9. FUTURE IMPROVEMENTS -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Future Improvements</p>
+    <h2 class="pd-heading">สิ่งที่จะพัฒนาต่อ</h2>
+    <ul class="pd-future-list" data-stagger>
+      <li>เพิ่ม automated test suite เต็มรูปแบบ (ปัจจุบันใช้ assert-based self-check ผ่าน <code>npm run check</code>)</li>
+    </ul>
+  </section>
+
+  <!-- 10. REPOSITORY INFO -->
+  <section class="pd-section" data-reveal>
+    <p class="pd-eyebrow">Repository Information</p>
+    <h2 class="pd-heading">ข้อมูลโครงการ</h2>
+    <div class="pd-repo-grid" data-stagger>
+      <div class="pd-repo-card"><span>License</span><p>ยังไม่กำหนด — โปรเจกต์รายวิชา</p></div>
+      <div class="pd-repo-card"><span>Type</span><p>University Coursework Project</p></div>
+      <div class="pd-repo-card"><span>Deployment</span><p>Docker Compose (Next.js standalone + LibreOffice)</p></div>
+    </div>
+  </section>
+
+</main>
+
+<script src="project-detail.js"></script>
+</body>
+</html>

@@ -212,15 +212,19 @@ body{
   padding:28px clamp(20px,5vw,64px);
   background:#0d0e14;
 }
+.hero-bg{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;z-index:0;
+}
 .hero::before,.hero::after{
   content:"";position:absolute;top:0;bottom:0;width:55%;
-  opacity:.5;pointer-events:none;z-index:0;
+  opacity:.5;pointer-events:none;z-index:1;
 }
 .hero::before{
-  left:0;background:radial-gradient(circle at 0% 40%,rgba(47,107,255,.35),transparent 65%);
+  left:0;background:linear-gradient(90deg,rgba(13,14,20,.9),transparent);
 }
 .hero::after{
-  right:0;background:radial-gradient(circle at 100% 60%,rgba(255,45,63,.35),transparent 65%);
+  right:0;background:linear-gradient(270deg,rgba(13,14,20,.9),transparent);
 }
 .hero-watermark{
   position:absolute;top:8%;left:4%;z-index:0;
@@ -243,6 +247,13 @@ body{
   font-family:"Oswald",sans-serif;font-size:.6rem;font-weight:600;letter-spacing:2px;
   color:var(--muted);line-height:1.3;text-transform:uppercase;
 }
+.hero-navlinks{display:flex;gap:32px}
+.hero-navlinks a{
+  color:var(--text);text-decoration:none;font-size:.8rem;letter-spacing:1.5px;
+  text-transform:uppercase;font-weight:600;padding-bottom:6px;border-bottom:2px solid transparent;
+}
+.hero-navlinks a.active,.hero-navlinks a:hover{border-color:var(--p2);color:var(--p2)}
+@media(max-width:800px){.hero-navlinks{display:none}}
 .hero-tag{
   font-size:.75rem;letter-spacing:2px;color:var(--text);
   border:1px solid var(--p2);padding:6px 14px;
@@ -252,12 +263,12 @@ body{
 .hero-inner{
   position:relative;z-index:2;
   max-width:1400px;margin:0 auto;
-  display:grid;grid-template-columns:1.1fr 1fr .8fr;
+  display:grid;grid-template-columns:1.2fr 1fr;
   align-items:center;gap:24px;
+  min-height:calc(100vh - 140px);
 }
 @media(max-width:1000px){
   .hero-inner{grid-template-columns:1fr}
-  .hero-portrait{order:-1;max-width:320px;margin:0 auto}
 }
 
 .hero-role{
@@ -319,8 +330,10 @@ body{
 }
 .hero-links{display:flex;gap:12px}
 .hero-links a{
-  color:var(--text);text-decoration:none;font-size:.8rem;letter-spacing:1px;
-  border:1px solid var(--panel2);padding:8px 16px;
+  display:flex;align-items:center;justify-content:center;
+  width:38px;height:38px;border-radius:50%;
+  color:var(--text);text-decoration:none;font-size:.75rem;font-weight:700;letter-spacing:.5px;
+  border:1px solid var(--panel2);
 }
 .hero-links a:hover{border-color:var(--p1);color:var(--p1)}
 
